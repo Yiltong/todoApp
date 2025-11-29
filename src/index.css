@@ -1,0 +1,368 @@
+ 
+ 
+ 
+body {
+    background-image: url('src/assets/b.jpg'); /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+
+
+* {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #202124;
+}
+
+h1,
+h2,
+h3,
+input {
+  font-family: 'Press Start 2P', system-ui;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  background: rgba(23, 216, 234, 0.5);
+  gap: 14px;
+}
+
+/* #root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  background: #eff6ff;
+  gap: 14px;
+} */
+
+header {
+  display: flex;
+  align-items: stretch;
+}
+
+.head {
+  display: flex;
+  justify-content: flex-end; /* pushes all items to the far right */
+  align-items: center;
+  flex-wrap: wrap; /* allows wrapping if needed on small screens */
+  gap: 8px; /* consistent small spacing */
+  padding: 8px;
+  font-size: 0.8rem; /* globally smaller text */
+  width: 100%; /* ensure it spans full width so "flex-end" works */
+  box-sizing: border-box;
+}
+
+.head h1 {
+  font-size: 1.2rem !important; /* smaller than text-3xl */
+  margin: 0 !important;
+}
+
+.head input {
+  padding: 4px 6px !important;
+  font-size: 0.85rem !important;
+  width: 100px; /* better than inline width='20px' */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.head > .text-4xl {
+  font-size: 1.3rem !important;
+  margin: 0 !important;
+  min-width: 40px;
+  text-align: center;
+}
+
+.head .space-x-3 {
+  display: flex;
+  gap: 8px;
+  margin: 0 !important;
+}
+
+button {
+  padding: 4px !important;
+  font-size: 0.8rem !important;
+  border-radius: 4px !important;
+  height: 50px;
+}
+
+.head p {
+  margin: 0 !important;
+  font-size: 0.85rem !important;
+}
+
+header,
+.main {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  gap: 14px;
+}
+
+.btn-green {
+  background-color: #10b981; /* green-500 */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-red {
+  background-color: #ef4444; /* red-500 */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+header input {
+  flex: 1;
+  border-radius: 14px;
+  outline: none;
+  width: 100%;
+}
+
+header button {
+  border-radius: 14px;
+  background: transparent;
+  transition-duration: 200ms;
+  cursor: pointer;
+  color: black;
+}
+
+header button:hover {
+  opacity: 0.7;
+}
+
+
+
+.List {
+  display: flex;
+  align-items: right;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: white;
+}
+
+header button,
+header input {
+  padding: 14px 18px;
+  border: none;
+  outline: none;
+  background: white;
+}
+
+p {
+  font-size: 0.9em;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 14px;
+  background: white;
+}
+
+.todoItem p {
+  flex: 1;
+}
+
+.actionsContainer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.actionsContainer button {
+  transition-duration: 200ms;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.actionsContainer button:hover {
+  opacity: 0.7;
+}
+
+
+
+@media (min-width: 640px) {
+
+  header button,
+  header input {
+    font-size: 1.2em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+}
+
+.Status {
+  background: red;
+}
+
+button {
+  border-radius: 14px;
+  background: gray;
+  color: #eff6ff;
+  transition-duration: 200ms;
+  cursor: pointer;
+  /* padding: 14px 18px; */
+  align-items: center;
+}
+
+.head {
+  text-align: center;
+  margin-top: 30px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.alarm {
+  font-size: 28px;
+  font-weight: bold;
+  color: #10b981;
+}
+
+.count-display {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+}
+
+/* Start Button */
+.start-btn {
+  background-color: #10b981;
+}
+
+.start-btn:hover {
+  background-color: #046b04;
+}
+
+/* Alarm Flashing animation */
+@keyframes pulse {
+  0% { background-color: red; }
+  50% { background-color: rgb(255, 70, 70); }
+  100% { background-color: red; }
+}
+
+.alarm-active {
+  animation: pulse 1s infinite;
+}
+
+/* Stop Button */
+.stop-btn {
+  background-color: #00e6d3;
+}
+
+.stop-btn:hover {
+  background-color: #c9a100;
+}
+
+/* Reset Button */
+.reset-btn {
+  background-color: #4a4a4a;
+}
+
+.reset-btn:hover {
+  background-color: #2f2f2f;
+}
+
+/* Input */
+.input-box {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  width: 180px;
+  font-size: 14px;
+}
+
+/* Alarm Text */
+.alarm-text {
+  margin-top: 10px;
+  font-size: 18px;
+  color: red;
+  font-weight: bold;
+}
+
+@media (min-width: 640px) {
+  header button,
+  header input {
+    font-size: 1.1rem;
+  }
+
+  .head .alarm {
+    font-size: 30px;
+  }
+
+  .count-display {
+    font-size: 45px;
+  }
+}
+
+/* Medium Devices (≥ 768px) */
+@media (min-width: 768px) {
+  .btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+
+  .input-box {
+    width: 200px;
+  }
+}
+
+/* Large Screens (≥ 1024px) */
+@media (min-width: 1024px) {
+  .head {
+    max-width: 900px;
+    margin: 40px auto;
+  }
+
+  .alarm {
+    font-size: 34px;
+  }
+
+  .count-display {
+    font-size: 50px;
+  }
+}
+
